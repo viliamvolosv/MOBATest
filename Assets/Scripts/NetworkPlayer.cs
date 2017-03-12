@@ -4,6 +4,7 @@ using System.Collections;
 public class NetworkPlayer : MonoBehaviour {
 
 
+ 
     // Use this for initialization
     void Start () {
         StartCoroutine(SendData());
@@ -27,7 +28,7 @@ public class NetworkPlayer : MonoBehaviour {
                 state.rotation.Fill(transform.rotation);
                 message.content = state;
                 NetworkManager.Instance.SendGameMsg(message);
-            yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSeconds(0.06f);
         }
     }
 }
